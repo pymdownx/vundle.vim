@@ -1,0 +1,10 @@
+# erlang_ls.config
+include_dirs:
+  - "include"
+  - "_build/default/lib/*/include"
+deps_dirs:
+  - "_build/default/lib/*"
+diagnostics:
+  enabled:
+    - crossref
+    - dialyzer
