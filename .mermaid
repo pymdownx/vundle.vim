@@ -3,3 +3,8 @@ graph TD
     B --> C{Is Valid?}
     C -->|Yes| D[Vim: No Errors]
     C -->|No| E[Vim: Show Diagnostics]
+%%{ init: { 'theme': 'base', 'themeVariables': { 'primaryColor': '#ffcc00', 'edgeColor': '#00ff00' } } }%%
+graph TD
+    A[Start] --> B{Error?}
+    B -->|Yes| C[Debug]
+    B -->|No| D[Success]
