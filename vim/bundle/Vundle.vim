@@ -1,27 +1,37 @@
-set nocompatible              
-filetype off                  
+set nocompatible
+filetype off
 
 " Initialize Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Let Vundle manage Vundle
-Plugin 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'          " Vundle manages itself
 
-" --- Essential Plugins ---
-Plugin 'tpope/vim-sensible'      " Better defaults
-Plugin 'tpope/vim-surround'      " Tag/quote management
-Plugin 'scrooloose/nerdtree'     " File explorer
-Plugin 'vim-airline/vim-airline' " Status bar
-Plugin 'ctrlpvim/ctrlp.vim'      " Fuzzy finder
-Plugin 'sheerun/vim-polyglot'    " Language support
-Plugin 'dense-analysis/ale'      " Linting/Syntax check
+" --- Advanced Erlang & LSP Plugins ---
+Plugin 'prabirshrestha/vim-lsp'        " The LSP client
+Plugin 'mattn/vim-lsp-settings'       " Auto-configs for servers
+Plugin 'vim-erlang/vim-erlang-runtime' " Best-in-class syntax
+Plugin 'dense-analysis/ale'           " Async Lint Engine
 
-call vundle#end()            
-filetype plugin indent on    
+" --- General IDE Features ---
+Plugin 'scrooloose/nerdtree'           " File explorer
+Plugin 'vim-airline/vim-airline'       " Advanced status bar
+Plugin 'ctrlpvim/ctrlp.vim'            " Fuzzy finder
 
-" --- Basic UI Settings ---
+call vundle#end()
+filetype plugin indent on
 syntax on
-set number
-set relativenumber
-set cursorline
+
+" --- Erlang Server (LSP) Definition ---
+if executable('erlang_ls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'erlang_ls',
+        \ 'cmd': {server_info->['erlang_ls', '--transport', 'stdio']},
+        \ 'allowlist': ['erlang'],
+        \ })
+endif
+
+" --- Advanced Shortcuts ---
+nnoremap gd :LspDefinition<CR>
+nnoremap K :LspHover<CR>
+let g:ale_linters = {'erlang': ['erlang_ls']}
