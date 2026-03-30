@@ -1,0 +1,5 @@
+graph TD
+    A[Erlang Source] --> B(erlang_ls)
+    B --> C{Is Valid?}
+    C -->|Yes| D[Vim: No Errors]
+    C -->|No| E[Vim: Show Diagnostics]
