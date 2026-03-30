@@ -36,7 +36,7 @@
 
 ![Vundle-installer](http://i.imgur.com/Rueh7Cc.png)
 
-## Quick Start
+## Quick Starth
 
 1. Introduction:
 
@@ -120,10 +120,21 @@ See the [`:h vundle`](https://github.com/VundleVim/Vundle.vim/blob/master/doc/vu
 
 See the [changelog](https://github.com/VundleVim/Vundle.vim/blob/master/changelog.md).
 
+   ```markdown
+<style>
+  .importantNode rect { fill: #ff5252 !important; stroke: #b71c1c !important; }
+  .importantNode .nodeLabel { color: white !important; font-weight: bold; }
+</style>
+
+```mermaid
+graph LR
+    Step1 --> Step2:::importantNode
+    classDef importantNode fill:#f96,stroke:#333,stroke-width:4px;
+
 ## People Using Vundle
 
 see [Examples](https://github.com/VundleVim/Vundle.vim/wiki/Examples)
-
+   ```
 ## Contributors
 
 see [Vundle contributors](https://github.com/VundleVim/Vundle.vim/graphs/contributors)
