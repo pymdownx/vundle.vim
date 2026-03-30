@@ -1,0 +1,34 @@
+theme:
+  name: material
+
+markdown_extensions:
+  # --- Core Content Bundles ---
+  - pymdownx.extra
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+
+  # --- Blocks & Containers (The "Box" Look) ---
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true 
+
+  # --- Interactive Features ---
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.keys
+  - pymdownx.progressbar
+  
+  # --- Data Handling ---
+  - pymdownx.snippets:
+      base_path: ["docs"]
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: your-github-username
+      repo: your-repo-name
