@@ -41,3 +41,11 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+" --- Advanced LSP & Linting ---
+Plugin 'prabirshrestha/vim-lsp'              " The LSP client
+Plugin 'mattn/vim-lsp-settings'             " Auto-configs for LSP servers
+Plugin 'dense-analysis/ale'                 " Asynchronous linting/fixing
+
+" --- Erlang Specific ---
+Plugin 'vim-erlang/vim-erlang-runtime'      " Core syntax (best-in-class)
+Plugin 'vim-erlang/vim-erlang-compiler'     " Background compilation
