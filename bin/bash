@@ -1,0 +1,4 @@
+git clone https://github.com/erlang-ls/erlang_ls
+cd erlang_ls
+rebar3 escriptize
+# Add _build/default/bin/erlang_ls to your PATH
