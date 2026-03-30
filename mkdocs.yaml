@@ -1,31 +1,30 @@
+site_name: Advanced Erlang Docs
 theme:
   name: material
 
 markdown_extensions:
-  # --- The "Extra" Bundle (Enables 8 extensions at once) ---
-  - pymdownx.extra
-  
-  # --- Specific Inline Formatting ---
-  - pymdownx.caret
-  - pymdownx.mark
-  - pymdownx.tilde
-  - pymdownx.keys
-  - pymdownx.emoji:
+  # --- Common Bundles & Inline ---
+  - pymdownx.extra             # Enables 8+ common extensions at once
+  - pymdownx.caret             # ins^^ert^^ and super^script^
+  - pymdownx.mark              # ==highlight==
+  - pymdownx.tilde             # del~~ete~~ and sub~script~
+  - pymdownx.keys              # ++ctrl+alt+del++
+  - pymdownx.emoji:            # Access to 1000s of icons
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
   # --- Advanced Blocks ---
-  - pymdownx.details
-  - pymdownx.tabbed:
+  - pymdownx.details           # ??? info "Collapsible blocks"
+  - pymdownx.tabbed:           # === "Tabbed Content"
       alternate_style: true
-  - pymdownx.superfences:
+  - pymdownx.superfences:      # Nested code blocks & diagrams
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
 
   # --- Data & Utilities ---
-  - pymdownx.snippets:
-      base_path: ["docs"]
-  - pymdownx.progressbar
-  - pymdownx.magiclink
+  - pymdownx.snippets          # --8<-- "include-file.md"
+  - pymdownx.progressbar       # [= 85% "Progress"]
+  - pymdownx.magiclink:        # Auto-link URLs and repos
+      repo_url_shorthand: true
